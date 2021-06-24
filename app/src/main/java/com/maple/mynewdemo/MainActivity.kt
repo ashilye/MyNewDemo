@@ -1,5 +1,6 @@
 package com.maple.mynewdemo
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
@@ -8,6 +9,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.maple.mynewdemo.shimmer.ShimmerActivity
+import com.maple.mynewdemo.shimmer.ShimmerListActivity
 import com.maple.mynewdemo.snackbar.AnimatedSnackbar
 import com.maple.mynewdemo.user.UserInfo
 import com.maple.mynewdemo.utils.LogUtils
@@ -40,6 +43,18 @@ class MainActivity : AppCompatActivity() {
         this.findViewById<Button>(R.id.btn_demo4).setOnClickListener {
             showUser()
         }
+
+        this.findViewById<Button>(R.id.btn_demo5).setOnClickListener {
+            removeUser()
+        }
+
+        this.findViewById<Button>(R.id.btn_demo6).setOnClickListener {
+            startActivity(Intent(this,ShimmerActivity::class.java))
+        }
+
+        this.findViewById<Button>(R.id.btn_demo7).setOnClickListener {
+            startActivity(Intent(this,ShimmerListActivity::class.java))
+        }
     }
 
     private fun saveUser() {
@@ -57,18 +72,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showUser() {
-        kv?.let { kv ->
-            val userInfo: String? = kv.getString("userInfo","")
-            val isFirst: Boolean = kv.getBoolean("isFirst",false)
-            userInfo?.let {  userInfo ->
-                tvInfo.text = userInfo
+        kv?.let { k ->
+            val userInfo: String? = k.getString("userInfo","")
+            val isFirst: Boolean = k.getBoolean("isFirst",false)
+            userInfo?.let {  u ->
+                tvInfo.text = u
             }
 
             LogUtils.logGGQ("---isFirst--->:${isFirst}")
         }
-
-
     }
+
+    private fun removeUser() {
+        kv?.remove("userInfo")
+    }
+
 
     private fun showSnackbar() {
         AnimatedSnackbar(this)

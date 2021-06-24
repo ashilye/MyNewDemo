@@ -2,10 +2,33 @@ package com.maple.mynewdemo.app
 
 import android.app.Application
 import android.graphics.Typeface
+import com.maple.mynewdemo.R
+import com.maple.mynewdemo.utils.UIUtils
+import com.scwang.smart.refresh.footer.ClassicsFooter
+import com.scwang.smart.refresh.header.ClassicsHeader
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
+
 import com.tencent.mmkv.MMKV
 import es.dmoral.toasty.Toasty
 
 class MyApplication: Application() {
+
+    companion object {
+        @JvmStatic
+        lateinit var instance: MyApplication
+            private set
+    }
+
+    init {
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, layout ->
+            layout.setPrimaryColorsId(R.color.white, R.color.theme)
+            ClassicsHeader(context).setDrawableArrowSize(14f).setDrawableProgressSize(14f).setTextSizeTitle(14f).setTextSizeTime(10f)
+        }
+
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout -> ClassicsFooter(context).setDrawableSize(14f).setTextSizeTitle(14f).setAccentColor(
+            UIUtils.getColor(R.color.theme))
+        }
+    }
 
     override fun onCreate() {
         super.onCreate()
