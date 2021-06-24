@@ -2,6 +2,7 @@ package com.maple.mynewdemo.app
 
 import android.app.Application
 import android.graphics.Typeface
+import com.tencent.mmkv.MMKV
 import es.dmoral.toasty.Toasty
 
 class MyApplication: Application() {
@@ -14,5 +15,7 @@ class MyApplication: Application() {
             .setTextSize(12) // optional
             .allowQueue(true) // optional (prevents several Toastys from queuing)
             .apply(); // required
+
+        MMKV.initialize(this)
     }
 }

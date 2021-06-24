@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_demo1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="demo1" />
 
-    <Button
-        android:id="@+id/btn_demo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="demo2" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试" />
+
+
+
+        <Button
+            android:id="@+id/btn_demo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast" />
+
+
+        <Button
+            android:id="@+id/btn_demo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="snackBar" />
+
+        <Button
+            android:id="@+id/btn_demo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存用户" />
+
+        <Button
+            android:id="@+id/btn_demo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取用户" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
