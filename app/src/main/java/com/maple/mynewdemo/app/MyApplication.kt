@@ -3,9 +3,8 @@ package com.maple.mynewdemo.app
 import android.app.Application
 import android.graphics.Typeface
 import com.maple.mynewdemo.R
-import com.maple.mynewdemo.utils.UIUtils
-import com.scwang.smart.refresh.footer.ClassicsFooter
-import com.scwang.smart.refresh.header.ClassicsHeader
+import com.maple.mynewdemo.refresh.MyRefreshFooter
+import com.maple.mynewdemo.refresh.MyRefreshHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 
 import com.tencent.mmkv.MMKV
@@ -22,14 +21,16 @@ class MyApplication: Application() {
     init {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, layout ->
             layout.setPrimaryColorsId(R.color.white, R.color.theme)
-            ClassicsHeader(context).setDrawableArrowSize(14f).setDrawableProgressSize(14f).setTextSizeTitle(14f).setTextSizeTime(10f)
+//            ClassicsHeader(context).setDrawableArrowSize(14f).setDrawableProgressSize(14f).setTextSizeTitle(14f).setTextSizeTime(10f)
+            MyRefreshHeader(context)
         }
 
-        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout -> ClassicsFooter(context).setDrawableSize(14f).setTextSizeTitle(14f).setAccentColor(
-            UIUtils.getColor(R.color.theme))
+        SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
+//            ClassicsFooter(context).setDrawableSize(14f).setTextSizeTitle(14f).setAccentColor(
+//            UIUtils.getColor(R.color.theme))
+            MyRefreshFooter(context)
         }
     }
-
     override fun onCreate() {
         super.onCreate()
         Toasty.Config.getInstance()

@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.maple.mynewdemo.dialog.DialogActivity
 import com.maple.mynewdemo.shimmer.ShimmerActivity
 import com.maple.mynewdemo.shimmer.ShimmerListActivity
 import com.maple.mynewdemo.snackbar.AnimatedSnackbar
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         this.findViewById<Button>(R.id.btn_demo7).setOnClickListener {
             startActivity(Intent(this,ShimmerListActivity::class.java))
+        }
+
+        this.findViewById<Button>(R.id.btn_demo8).setOnClickListener {
+            startActivity(Intent(this,DialogActivity::class.java))
         }
     }
 

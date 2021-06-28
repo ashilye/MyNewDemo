@@ -62,5 +62,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ShimmerList" />
+
+        <Button
+            android:id="@+id/btn_demo8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BottomDialog" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyNewDemo">
-        <activity android:name=".shimmer.ShimmerListActivity"/>
+        <activity android:name=".dialog.DialogActivity"/>
+        <activity android:name=".shimmer.ShimmerListActivity" />
         <activity android:name=".shimmer.ShimmerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
